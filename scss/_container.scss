@@ -1,0 +1,53 @@
+.wrapper{
+    height: 100vh;;
+    display: flex;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    @media(max-width: 768px){
+        width: auto;
+        flex-direction: column;   
+    }
+    .part{
+        padding-right: 20px;
+        @media(max-width: 768px){
+            padding-bottom: 50px;
+        }
+    }
+    .column{
+        @include column;
+        
+        .img{
+            padding-bottom: 150px;       
+        }
+        .img img{
+            
+            @include img;
+            padding-right: 15px;
+        }
+        .content{
+            max-width: 368px;
+            h1{
+                @include title;
+                padding-bottom: 15px;
+                @media(max-width: 444px){
+                    font-size: 30px;
+                    line-height: 35px;
+                }
+            }
+            .text{
+                @include text;
+                padding-bottom: 50px;
+            }
+        }
+        .col-1 .minititle{
+            @include colorminititle(green);
+        }
+        .col-2 .minititle{
+            @include colorminititle(blue);
+        }
+    } 
+}
